@@ -1,0 +1,73 @@
+<!-- Video element -->
+<div class="UM-video-section">
+  <span class="UM-absolute-span">
+    <span class="UM-h1">385+</span>
+    <br>
+    <span class="UM-p">Satisfied Client</span>
+  </span>
+  <video
+    src="https://player.vimeo.com/external/502448622.sd.mp4?s=b986796fe032a2ef7890880779489597a837b93b&profile_id=164&oauth2_token_id=57447761"
+    type="video/mp4"
+    muted
+    class="vid"
+    loop
+    style="border: solid; width:100%;"
+  ></video>
+</div>
+
+<style>
+  .UM-video-section{
+    position: relative;
+  }
+  .UM-absolute-span{
+    position: absolute;
+    bottom: 100px;
+    left: 150px;
+  }
+      span.UM-h1 {
+      color: white;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 100px;
+  }
+        span.UM-p {
+      color: white;
+      font-style: italic;
+      font-weight: 200px;
+      font-size: 50px;
+  }
+</style>
+
+<script>
+  // Listening to the video element
+  let clip = document.querySelector(".vid")
+
+  /* Adding the event listeners on the video to play/pause the video. */
+  clip.addEventListener("mouseover", function (e) {
+     clip.play();
+  })
+
+  /* Applying the mouse out event to pause the video */
+  clip.addEventListener("mouseout", function (e) {
+     clip.pause();
+  })
+</script>
+
+{% schema %}
+{
+  "name": "UM Video",
+  "settings": [],
+  "presets": [
+    {
+      "name": "UM Video"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
