@@ -1,0 +1,121 @@
+{% comment %}
+
+When user login successfully so change the value="/" in main.login.liquid file (line no. 85 approximately)
+
+{% endcomment %}
+
+
+{% if customer %}
+  {% comment %} Shopper is logged in, but are they special? {% endcomment %}
+  {% assign lowercase_tags = customer.tags | join: ',' | downcase | split: ',' %}
+  {% if lowercase_tags contains 'wholesale' %}
+    {% assign customer_message = 'Welcome, Wholesaler!' %}
+
+    {% comment %}OPTIONAL: We can use one or more elsif (Liquid's version of "else if") statements to check for any other special tags, if desired. {% endcomment %}
+  {% elsif lowercase_tags contains 'some-other-special-tag' %}
+    {% assign customer_message = 'Super Buddy' %}
+
+  {% else %}
+    {% comment %} This will be the message for logged-in customers without any special tags {% endcomment %}
+    {% assign customer_message = 'Logged in as  ' | append: customer.name %}
+    <div class="UM-flex-container">
+      <div class="row">
+        <div class="column">
+          <img
+            src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Snow"
+            style="width:100%; height: 50vh; border: 2px solid #000;"
+          >
+        </div>
+        <div class="column">
+          <img
+            src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Forest"
+            style="width:100%; height: 50vh; border: 2px solid #000;"
+          >
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:-9px">
+        <div class="column">
+          <img
+            src="https://images.pexels.com/photos/655679/pexels-photo-655679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Snow"
+            style="width:100%; border: 2px solid #000;"
+          >
+        </div>
+        <div class="column">
+          <img
+            src="https://images.pexels.com/photos/1456291/pexels-photo-1456291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Forest"
+            style="width:100%; border: 2px solid #000;"
+          >
+        </div>
+        <div class="column">
+          <img
+            src="https://images.pexels.com/photos/395196/pexels-photo-395196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Mountains"
+            style="width:100%; border: 2px solid #000;"
+          >
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% comment %}
+    Print the appropriate welcome message
+    <span class="welcome-message">{{ customer_message }}</span>
+  {% endcomment %}
+
+{% else %}
+  {% comment %} Customer is not logged in {% endcomment %}
+  <span class="log-in-prompt"
+    ><a href="/account/login" id="customer_login_link" class="site-header__link site-header__cart">
+      Please Login
+    </a></span
+  >
+{% endif %}
+
+{% schema %}
+{
+  "name": "UM Gallery",
+  "settings": [],
+  "presets": [
+    {
+      "name": "UM Gallery"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      display: flex;
+    }
+      .margin-minus{
+        margin-top:-8px;
+      }
+
+    /* Create three equal columns that sits next to each other */
+    .column {
+      flex: 33.33%;
+    }
+      div#shopify-section-template--18954190651673__774e71fd-e76d-4125-be02-71bc3e3d6a1d {
+        text-align: center;
+        padding-bottom: 100px;
+      padding-top: 100px;
+    }
+    a#customer_login_link {
+      background-color: #008060;
+      padding: 16px;
+      border-radius: 10px;
+          text-decoration: none;
+    color: #fff;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
