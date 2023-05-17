@@ -1,0 +1,163 @@
+<section id="UM-tab">
+  <h1>Product Ingredient Dictionary</h1>
+  <div class="tab-customize">
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-1')" id="tab-cus-active">All</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-2')">A</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-3')">B</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-4')">C</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-5')">D</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-6')">E</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-7')">F</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-8')">G</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-9')">H</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-10')">I</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-11')">J</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-12')">K</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-13')">L</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-14')">M</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-15')">N</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-16')">O</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-17')">P</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-18')">Q</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-19')">R</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-20')">S</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-21')">T</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-22')">U</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-23')">V</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-24')">W</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-25')">X</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-26')">Y</button>
+    <button class="tablinks-cus" onclick="openTab(event, 'tab-27')">Z</button>
+  </div>
+  <!-- Tab content -->
+  <div class="UM-tabContent">
+    <div id="tab-1" class="tabcontent-cus">ALL</div>
+    <div id="tab-2" class="tabcontent-cus ">A</div>
+    <div id="tab-3" class="tabcontent-cus ">B</div>
+    <div id="tab-4" class="tabcontent-cus ">C</div>
+    <div id="tab-5" class="tabcontent-cus ">D</div>
+    <div id="tab-6" class="tabcontent-cus ">E</div>
+    <div id="tab-7" class="tabcontent-cus ">F</div>
+    <div id="tab-8" class="tabcontent-cus ">G</div>
+    <div id="tab-9" class="tabcontent-cus ">H</div>
+    <div id="tab-10" class="tabcontent-cus ">I</div>
+    <div id="tab-11" class="tabcontent-cus ">J</div>
+    <div id="tab-12" class="tabcontent-cus ">K</div>
+    <div id="tab-13" class="tabcontent-cus ">L</div>
+    <div id="tab-14" class="tabcontent-cus ">M</div>
+    <div id="tab-15" class="tabcontent-cus ">N</div>
+    <div id="tab-16" class="tabcontent-cus ">O</div>
+    <div id="tab-17" class="tabcontent-cus ">P</div>
+    <div id="tab-18" class="tabcontent-cus ">Q</div>
+    <div id="tab-19" class="tabcontent-cus ">R</div>
+    <div id="tab-20" class="tabcontent-cus ">S</div>
+    <div id="tab-21" class="tabcontent-cus ">T</div>
+    <div id="tab-22" class="tabcontent-cus ">U</div>
+    <div id="tab-23" class="tabcontent-cus ">V</div>
+    <div id="tab-24" class="tabcontent-cus ">W</div>
+    <div id="tab-25" class="tabcontent-cus ">X</div>
+    <div id="tab-26" class="tabcontent-cus ">Y</div>
+    <div id="tab-27" class="tabcontent-cus ">Z</div>
+  </div>
+</section>
+
+<style>
+  #UM-tab{
+    padding:50px
+  }
+  #UM-tab h1{
+    text-align: center;
+    color: #008060;
+  }
+  .tab-customize {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  .tab-customize button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px
+  }
+  .tab-customize button:hover {
+    background-color: #ddd;
+  }
+  .tab-customize button.active {
+    color: #008060;;
+  }
+
+  .UM-tabContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    font-size: 100px;
+  }
+
+  .tabcontent-cus {
+    display: none;
+    padding: 6px 12px;
+  }
+</style>
+
+<script>
+    function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent-cus");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks-cus");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("tab-cus-active").click();
+</script>
+
+{% schema %}
+{
+  "name": "UM tabs",
+  "settings": [],
+  	"blocks": [
+     {
+       "name": "Slide",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "collection",
+           "id": "UM-tab-collection",
+           "label": "Image"
+         }
+       ]
+     }
+  ],
+  "presets": [
+    {
+      "name": "UM tabs",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
